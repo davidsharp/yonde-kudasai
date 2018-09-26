@@ -27,7 +27,7 @@
         "yonde-kudasai": {
           "suggested_key": {
             "default": "Ctrl+Shift+Y",
-            "mac": "Ctrl+Shift+Y"
+            "mac": "MacCtrl+Shift+Y"
           },
           "description": "Read 日本語"
         }
