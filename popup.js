@@ -20,8 +20,7 @@ chrome.extension.onMessage.addListener(function(myMessage, sender, sendResponse)
 
 chrome.commands.onCommand.addListener(function(command){
   console.log('Trigger Command :::',command)
-  if(text.length>0 && command === 'jisho-me'){
-    console.log('TODO: jisho-me!')
+  if(text.length>0 && command === 'yonde-kudasai'){
     yonde(text);
   }
 
