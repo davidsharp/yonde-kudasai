@@ -3,7 +3,7 @@
 // https://developer.chrome.com/extensions/omnibox
 // chrome.omnibox.onInputStarted.addListener(function callback)
 // chrome.omnibox.onInputChanged.addListener(function(e){console.log(e)})
-chrome.omnibox.onInputEntered.addListener(jishoMe)
+chrome.omnibox.onInputEntered.addListener(yonde)
 
 // http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
 // https://app.kanjialive.com/api/docs
@@ -22,7 +22,7 @@ chrome.commands.onCommand.addListener(function(command){
   console.log('Trigger Command :::',command)
   if(text.length>0 && command === 'jisho-me'){
     console.log('TODO: jisho-me!')
-    jishoMe(text);
+    yonde(text);
   }
 
 });
@@ -68,7 +68,8 @@ function jishoMe(text){ //maybe I can split at spaces to search for individual w
   })
 }
 
-function speakVoice(words){
+speechSynthesis.getVoices()
+function yonde(words){
   const voice = speechSynthesis.getVoices().filter(voice=>voice&&/ja[-_]JP/.test(voice.lang)).reverse()[0];
   const utterance = new SpeechSynthesisUtterance(words);
   utterance.voice = voice;
